@@ -1,0 +1,12 @@
+Hello this is a test
+
+!![THIS IS A DIRECTIVE]!!
+
+The lines
+Still keep
+
+Continuing
+
+Oh No!! Another DIRECTIVE
+
+!![THIS IS A DIRECTIVE]!!

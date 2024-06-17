@@ -1,0 +1,23 @@
+Hello this is a test
+
+@@start:box
+
+#box{This is a box}
+
+@@end:box
+
+The lines
+Still keep
+
+Continuing
+
+Oh No!! Another DIRECTIVE
+
+@@start:any
+
+
+
+
+
+some stuff
+@@end::any

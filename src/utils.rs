@@ -1,7 +1,7 @@
 use std::ffi::OsStr;
-use std::path::Path;
 use std::fs::OpenOptions;
 use std::io::Write;
+use std::path::Path;
 
 use shellexpand;
 

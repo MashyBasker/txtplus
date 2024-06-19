@@ -2,7 +2,6 @@ use std::fs::{self, File};
 use std::io::{BufRead, BufReader};
 use std::path::Path;
 
-
 use crate::utils;
 
 pub fn parse_and_render(src_filepath: &str) -> Result<(), std::io::Error> {
@@ -44,7 +43,6 @@ pub fn parse_and_render(src_filepath: &str) -> Result<(), std::io::Error> {
     Ok(())
 }
 
-
 fn handle_line(
     line: &String,
     directive_start: &mut bool,
@@ -52,7 +50,6 @@ fn handle_line(
     directive_cmd: &mut Vec<String>,
     write_abs_filepath: &String,
 ) -> std::io::Result<()> {
-
     // check if cursor is inside a directive
     if line.starts_with("@@start") {
         *directive_start = true;
@@ -62,15 +59,18 @@ fn handle_line(
         *directive_end = true;
         // make sure the @@end directive goes inside the vector
         directive_cmd.push(line.clone());
-        
+
         // render when the directive ends
         // TODO: Replace this with actual stuff later
-        utils::append_to_file(write_abs_filepath, &"!![THIS IS A DIRECTIVE]!!\n".to_string())?;
-        
+        utils::append_to_file(
+            write_abs_filepath,
+            &"!![THIS IS A DIRECTIVE]!!\n".to_string(),
+        )?;
+
         // clear the vector storing directive commands to reuse it again
         directive_cmd.clear();
     }
-    
+
     if !*directive_start && *directive_end && !line.starts_with("@@end") {
         utils::append_to_file(write_abs_filepath, line)?;
     } else if *directive_end && !*directive_end {

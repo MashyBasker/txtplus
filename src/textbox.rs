@@ -48,8 +48,8 @@ Long sentences will be broken down into multiple line,
 
 */
 
-use std::{fs::OpenOptions, iter::repeat};
 use std::io::Write;
+use std::{fs::OpenOptions, iter::repeat};
 
 use regex::Regex;
 
@@ -96,7 +96,8 @@ fn box_to_file(fpath: &String, textboxes: Vec<String>) -> std::io::Result<()> {
 
     let mut f = OpenOptions::new().append(true).open(fpath)?;
     for i in 0..max_len {
-        let line = split_boxes.iter()
+        let line = split_boxes
+            .iter()
             .map(|bxline| {
                 if i < bxline.len() {
                     bxline[i].clone()
@@ -109,18 +110,18 @@ fn box_to_file(fpath: &String, textboxes: Vec<String>) -> std::io::Result<()> {
         writeln!(f, "{}", line)?;
     }
     Ok(())
-
 }
 
 fn newline_string(strings: Vec<&str>) -> Vec<String> {
-    strings.into_iter()
+    strings
+        .into_iter()
         .map(|s| {
             s.split_whitespace()
-            .collect::<Vec<&str>>()
-            .chunks(3)
-            .map(|chunk| chunk.join(" "))
-            .collect::<Vec<String>>()
-            .join("\n")
+                .collect::<Vec<&str>>()
+                .chunks(3)
+                .map(|chunk| chunk.join(" "))
+                .collect::<Vec<String>>()
+                .join("\n")
         })
         .collect::<Vec<String>>()
 }
@@ -132,8 +133,6 @@ fn draw_texbox(file: &String, cmd_line: &String) -> std::io::Result<()> {
     box_to_file(file, textboxes)?;
     Ok(())
 }
-
-
 
 #[allow(unused)]
 pub fn render_box(file: &String, directive_cmd: &mut Vec<String>) {

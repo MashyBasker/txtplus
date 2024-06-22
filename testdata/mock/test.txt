@@ -1,21 +1,17 @@
-Hello this is a test
+This is a test
 
 @@start::box
 
-[Hello] [World] [Good] bro
+[Hello] [World]
 
 @@end::box
 
-The lines
-Still keep
-
-Continuing
-
-Oh No!! Another DIRECTIVE
+Long sentences will be broken down
 
 @@start::box
 
-[hey] [man] [An idiot admires complexity, a genius admires simplicity]
-[Another one]
+[And idiot admires complexity, a genius admires simplicity]
+
+[Terry Davis]
 
 @@end::box

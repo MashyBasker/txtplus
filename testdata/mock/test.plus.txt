@@ -1,21 +1,16 @@
-Hello this is a test
+This is a test
 
-+-------+ +-------+ +------+
-| Hello | | World | | Good |
-+-------+ +-------+ +------+
++-------+ +-------+
+| Hello | | World |
++-------+ +-------+
 
-The lines
-Still keep
+Long sentences will be broken down
 
-Continuing
-
-Oh No!! Another DIRECTIVE
-
-+-----+ +-----+ +----------------------+
-| hey | | man | | An idiot admires     |
-+-----+ +-----+ | complexity, a genius |
-                | admires simplicity   |
-                +----------------------+
++----------------------+
+| And idiot admires    |
+| complexity, a genius |
+| admires simplicity   |
++----------------------+
 +-------------+
-| Another one |
+| Terry Davis |
 +-------------+

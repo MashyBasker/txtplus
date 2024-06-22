@@ -41,16 +41,16 @@ mod tests {
     #[test]
     fn test_get_filename() {
         assert_eq!(
-            write_filepath("/home/okabe/projects/txtplus/testdata/mock/file.txt"),
-            Some("/home/okabe/projects/txtplus/testdata/mock/file.plus.txt".to_string())
+            write_filepath("/home/okabe/projects/txtplus/testdata/mock/test.txt"),
+            Some("/home/okabe/projects/txtplus/testdata/mock/test.plus.txt".to_string())
         );
         assert_eq!(
-            write_filepath("~/projects/txtplus/testdata/mock/file.txt"),
-            Some("/home/okabe/projects/txtplus/testdata/mock/file.plus.txt".to_string())
+            write_filepath("~/projects/txtplus/testdata/mock/test.txt"),
+            Some("/home/okabe/projects/txtplus/testdata/mock/test.plus.txt".to_string())
         );
         assert_eq!(
-            write_filepath("./testdata/mock/file.txt"),
-            Some("/home/okabe/projects/txtplus/testdata/mock/file.plus.txt".to_string())
+            write_filepath("./testdata/mock/test.txt"),
+            Some("/home/okabe/projects/txtplus/testdata/mock/test.plus.txt".to_string())
         );
     }
 

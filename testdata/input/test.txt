@@ -1,10 +1,10 @@
 Hello this is a test
 
-@@start:box
+@@start::box
 
-#box{This is a box}
+[Hello] [World] [Good] bro
 
-@@end:box
+@@end::box
 
 The lines
 Still keep
@@ -13,11 +13,9 @@ Continuing
 
 Oh No!! Another DIRECTIVE
 
-@@start:any
+@@start::box
 
+[hey] [man] [An idiot admires complexity, a genius admires simplicity]
+[Another one]
 
-
-
-
-some stuff
-@@end::any
+@@end::box

@@ -1,6 +1,8 @@
 Hello this is a test
 
-!![THIS IS A DIRECTIVE]!!
++-------+ +-------+ +------+
+| Hello | | World | | Good |
++-------+ +-------+ +------+
 
 The lines
 Still keep
@@ -9,4 +11,11 @@ Continuing
 
 Oh No!! Another DIRECTIVE
 
-!![THIS IS A DIRECTIVE]!!
++-----+ +-----+ +----------------------+
+| hey | | man | | An idiot admires     |
++-----+ +-----+ | complexity, a genius |
+                | admires simplicity   |
+                +----------------------+
++-------------+
+| Another one |
++-------------+

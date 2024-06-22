@@ -2,7 +2,8 @@ use std::fs::{self, File};
 use std::io::{BufRead, BufReader};
 use std::path::Path;
 
-use crate::utils;
+use crate::{textbox, utils};
+// use crate::textbox;
 
 pub fn parse_and_render(src_filepath: &str) -> Result<(), std::io::Error> {
     let src_abs_filepath = utils::abspath(src_filepath).unwrap();
@@ -58,25 +59,35 @@ fn handle_line(
         *directive_start = false;
         *directive_end = true;
         // make sure the @@end directive goes inside the vector
-        directive_cmd.push(line.clone());
+        directive_cmd.push(line.clone().trim_end().to_string());
 
         // render when the directive ends
-        // TODO: Replace this with actual stuff later
-        utils::append_to_file(
-            write_abs_filepath,
-            &"!![THIS IS A DIRECTIVE]!!\n".to_string(),
-        )?;
+        if let Some(directive_type) = line.split("::").nth(1) {
+            match directive_type.trim() {
+                "box" => {
+                    // println!("{:?}", directive_cmd);
+                    textbox::render_box(write_abs_filepath, directive_cmd);
+                }
+                &_ => utils::append_to_file(
+                    write_abs_filepath,
+                    &"Oops! this hasn't implemented yet (ᴗ_ ᴗ。)".to_string(),
+                )?,
+            }
+        } else {
+            return Err(std::io::Error::new(
+                std::io::ErrorKind::InvalidInput,
+                "Directive end line is malformed",
+            ));
+        }
 
         // clear the vector storing directive commands to reuse it again
         directive_cmd.clear();
-    }
-
-    if !*directive_start && *directive_end && !line.starts_with("@@end") {
-        utils::append_to_file(write_abs_filepath, line)?;
-    } else if *directive_end && !*directive_end {
+    } else if *directive_start && !*directive_end {
         if !line.trim().is_empty() {
-            directive_cmd.push(line.clone());
+            directive_cmd.push(line.clone().trim_end().to_string());
         }
+    } else {
+        utils::append_to_file(write_abs_filepath, line)?;
     }
 
     Ok(())

@@ -28,9 +28,9 @@ pub fn write_filepath(path: &str) -> Option<String> {
     }
 }
 
-pub fn append_to_file(f_path: &String, line: &String) -> std::io::Result<()> {
+pub fn append_to_file(f_path: &String, line: &str) -> std::io::Result<()> {
     let mut f = OpenOptions::new().append(true).create(true).open(f_path)?;
-    write!(f, "{}", line)?;
+    f.write_all(line.as_bytes())?;
     Ok(())
 }
 

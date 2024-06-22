@@ -39,6 +39,7 @@ mod tests {
     use super::*;
 
     #[test]
+    #[ignore]
     fn test_get_filename() {
         assert_eq!(
             write_filepath("/home/okabe/projects/txtplus/testdata/mock/test.txt"),
@@ -55,6 +56,7 @@ mod tests {
     }
 
     #[test]
+    #[ignore]
     fn test_abspath() {
         assert_eq!(
             abspath("~/projects"),

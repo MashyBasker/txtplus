@@ -1,12 +1,11 @@
 This is a test
-
-
 Long sentences will be broken down
 
 @@start::box
 
 [And idiot admires complexity, a genius admires simplicity] [Terry Davis]
-[Interrupt Routine]
+
+[Hello] [World]
 @@end::box
 
 @@start::tree

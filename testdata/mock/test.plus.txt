@@ -1,6 +1,4 @@
 This is a test
-
-
 Long sentences will be broken down
 
 +----------------------+ +-------------+
@@ -8,9 +6,9 @@ Long sentences will be broken down
 | complexity, a genius | +-------------+
 | admires simplicity   |                
 +----------------------+                
-+-------------------+
-| Interrupt Routine |
-+-------------------+
++-------+ +-------+
+| Hello | | World |
++-------+ +-------+
 
 .
     └── Root
@@ -25,9 +23,3 @@ Long sentences will be broken down
             └── Tenth
                 └── Eleventh
                     └── Twelfth
-
-.
-    ├── First
-    │   ├── Second
-    │   └── Third
-    └── Fourth

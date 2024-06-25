@@ -2,7 +2,7 @@ use std::fs::{self, File};
 use std::io::{BufRead, BufReader};
 use std::path::Path;
 
-use crate::{textbox, utils};
+use crate::{textbox, tree, utils};
 // use crate::textbox;
 
 pub fn parse_and_render(src_filepath: &str) -> Result<(), std::io::Error> {
@@ -67,6 +67,10 @@ fn handle_line(
                 "box" => {
                     // println!("{:?}", directive_cmd);
                     textbox::render_box(write_abs_filepath, directive_cmd);
+                }
+                "tree" => {
+                    // println!("{:?}", directive_cmd);
+                    tree::render_tree(write_abs_filepath, directive_cmd)?;
                 }
                 &_ => utils::append_to_file(
                     write_abs_filepath,

@@ -134,12 +134,11 @@ fn draw_texbox(file: &String, cmd_line: &String) -> std::io::Result<()> {
     Ok(())
 }
 
-#[allow(unused)]
 pub fn render_box(file: &String, directive_cmd: &mut Vec<String>) {
     // println!("{:?}", directive_cmd);
     let n = directive_cmd.len();
     for i in 0..n - 1 {
-        draw_texbox(file, &directive_cmd[i]);
+        let _ = draw_texbox(file, &directive_cmd[i]);
     }
 }
 

@@ -1,5 +1,6 @@
 mod parser;
 mod textbox;
+mod tree;
 mod utils;
 
 fn main() -> std::io::Result<()> {
